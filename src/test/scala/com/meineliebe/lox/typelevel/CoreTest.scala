@@ -9,14 +9,8 @@ import scala.runtime.stdLibPatches.Predef.summon
 class CoreTest extends AnyWordSpec with should.Matchers {
 
   "Dec" in {
-    {
-      val x = summon[Dec[_9]]
-      teq[x.Result, _8]
-    }
-    {
-      val x = summon[Dec[_1]]
-      teq[x.Result, _0]
-    }
+    Dec.test[_9, _8]
+    Dec.test[_1, _0]
   }
 
   "==" in {

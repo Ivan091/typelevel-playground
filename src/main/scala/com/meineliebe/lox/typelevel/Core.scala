@@ -16,13 +16,14 @@ type _8 = Succ[_7]
 type _9 = Succ[_8]
 
 trait Dec[N <: Nat] {
-  type Result <: Nat
+  type R <: Nat
 }
 
 object Dec {
-  private type _Dec[N <: Nat, O <: Nat] = Dec[N] { type Result = O }
-  given basic: _Dec[Succ[_0], _0] = new Dec[Succ[_0]] { type Result = _0 }
-  given inductive[N <: Nat](using d: Dec[N]): _Dec[Succ[N], Succ[d.Result]] = new Dec[Succ[N]] {type Result = Succ[d.Result]}
+  private type _Dec[N <: Nat, O <: Nat] = Dec[N] { type R = O }
+  given basic: _Dec[Succ[_0], _0] = new Dec[Succ[_0]] { type R = _0 }
+  given inductive[N <: Nat](using d: Dec[N]): _Dec[Succ[N], Succ[d.R]] = new Dec[Succ[N]] { type R = Succ[d.R] }
+  def test[N <: Nat, O <: Nat](using dec: _Dec[N, O]): _Dec[N, O] = dec
   def apply[N <: Nat](using dec: Dec[N]): Dec[N] = dec
 }
 
