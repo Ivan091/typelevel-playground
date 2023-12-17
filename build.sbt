@@ -6,6 +6,8 @@ Global / cancelable := true
 Global / connectInput := true
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
+scalacOptions ++= Seq("-old-syntax", "-no-indent", "-Xfatal-warnings")
+
 libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-effect" % "3.4.8",
   "org.typelevel" %% "cats-effect-testing-scalatest" % "1.4.0" % Test,
@@ -16,4 +18,6 @@ libraryDependencies ++= Seq(
   "com.typesafe" % "config" % "1.4.2",
   "org.typelevel" %% "log4cats-slf4j" % "2.5.0",
   "ch.qos.logback" % "logback-classic" % "1.4.6" % Runtime,
+  "org.typelevel" %% "shapeless3-deriving" % "3.0.1",
+  "org.tpolecat" %% "typename" % "1.0.0"
 )
