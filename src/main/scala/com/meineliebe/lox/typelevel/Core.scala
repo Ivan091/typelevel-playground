@@ -26,18 +26,6 @@ object Dec {
   def apply[N <: Nat](using dec: Dec[N]): _Dec[N, dec.R] = dec
 }
 
-//trait Apply[F[_ <: Nat, _ <: Nat], A <: Nat] {
-//  type R <: Nat
-//}
-//
-//type _Apply[F[_ <: Nat, _ <: Nat], A <: Nat, O <: Nat] = Apply[F, A] {type R = O}
-//
-//object Apply {
-//  def test[F[_ <: Nat, _ <: Nat], A <: Nat, O <: Nat](using f: F[A, O]): _Apply[F, A, O] = new Apply[F, A] {
-//    type R = O
-//  }
-//}
-
 trait Apply[F[_ <: Nat, _ <: Nat], A <: Nat] {
   type R <: Nat
 }

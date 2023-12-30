@@ -6,6 +6,8 @@ Global / cancelable := true
 Global / connectInput := true
 Global / onChangedBuildSource := ReloadOnSourceChanges
 
+javaOptions ++= Seq("-Xmx8G")
+
 scalacOptions ++= Seq("-old-syntax", "-no-indent", "-Xfatal-warnings")
 
 libraryDependencies ++= Seq(

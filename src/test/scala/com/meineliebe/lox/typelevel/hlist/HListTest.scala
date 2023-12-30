@@ -1,4 +1,4 @@
-package com.meineliebe.lox.typelevel
+package com.meineliebe.lox.typelevel.hlist
 
 import com.meineliebe.lox.typelevel.{< as lt, <= as ltq, == as teq, *}
 import com.meineliebe.lox.typelevel.hlist.{=== as hleq, *}
@@ -7,7 +7,7 @@ import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec
 import org.tpolecat.typename.TypeName
 
-class HListTest extends AnyWordSpec with should.Matchers {
+class HListTest extends TestBase {
 
   "===" in {
     hleq[_0 :: _1 :: HNil, _0 :: _1 :: HNil]
@@ -41,7 +41,4 @@ class HListTest extends AnyWordSpec with should.Matchers {
       BSort.test[_0 :: _1 :: HNil, _0 :: _1 :: HNil]
     }
   }
-
-  def printType[A](value: A)(using typename: TypeName[A]): Unit = println(typename.value.replace("com.meineliebe.lox.typelevel.hlist", "").replace("com.meineliebe.lox.typelevel.", ""))
-
 }

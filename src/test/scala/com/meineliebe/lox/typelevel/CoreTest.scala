@@ -8,10 +8,7 @@ import org.tpolecat.typename.TypeName
 
 import scala.runtime.stdLibPatches.Predef.summon
 
-class CoreTest extends AnyWordSpec with should.Matchers {
-
-  def printType[A](value: A)(using typename: TypeName[A]): Unit = println(typename.value.replace("com.meineliebe.lox.typelevel.hlist", "").replace("com.meineliebe.lox.typelevel.", ""))
-
+class CoreTest extends TestBase {
 
   "Dec" in {
     Dec.test[_9, _8]
@@ -35,8 +32,6 @@ class CoreTest extends AnyWordSpec with should.Matchers {
   }
 
   "Apply" in {
-    val x = Apply[_Dec, _1]
-    val y = Dec[_1]
-    teq[x.R, y.R]
+    Apply.test[_Dec, _1, _0]
   }
 }
