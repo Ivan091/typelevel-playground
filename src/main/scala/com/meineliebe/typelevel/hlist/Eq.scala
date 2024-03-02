@@ -1,7 +1,6 @@
-package com.meineliebe.lox.typelevel.hlist
+package com.meineliebe.typelevel.hlist
 
-import com.meineliebe.lox.typelevel.*
-
+import com.meineliebe.typelevel.*
 
 trait ===[HA <: HList, HB <: HList]
 object === {

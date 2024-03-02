@@ -1,6 +1,6 @@
-package com.meineliebe.lox.typelevel.hlist
+package com.meineliebe.typelevel.hlist
 
-import com.meineliebe.lox.typelevel.Nat
+import com.meineliebe.typelevel.{hlist, Nat}
 
 trait Append[HL <: HList, A <: Nat] {
   type R <: HList
@@ -17,4 +17,3 @@ object Append {
   def test[HL <: HList, A <: Nat, O <: HList](using append: _Append[HL, A, O]): _Append[HL, A, O] = append
   def apply[HL <: HList, A <: Nat](using append: Append[HL, A]): _Append[HL, A, append.R] = append
 }
-

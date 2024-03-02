@@ -1,4 +1,4 @@
-package com.meineliebe.lox.typelevel
+package com.meineliebe.typelevel
 
 import org.scalatest.matchers.should
 import org.scalatest.wordspec.AnyWordSpec

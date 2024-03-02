@@ -1,6 +1,4 @@
-package com.meineliebe.lox.typelevel
-
-import scala.annotation.targetName
+package com.meineliebe.typelevel
 
 trait Nat
 class _0 extends Nat

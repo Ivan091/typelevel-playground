@@ -1,6 +1,6 @@
-package com.meineliebe.lox.typelevel.math
+package com.meineliebe.typelevel.math
 
-import com.meineliebe.lox.typelevel.*
+import com.meineliebe.typelevel.*
 
 trait Subtract[A <: Nat, B <: Nat] {
   type R <: Nat

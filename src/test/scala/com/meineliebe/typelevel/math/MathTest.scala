@@ -1,8 +1,6 @@
-package com.meineliebe.lox.typelevel.math
+package com.meineliebe.typelevel.math
 
-import com.meineliebe.lox.typelevel.*
-import com.meineliebe.lox.typelevel.{< as lt, <= as ltq, == as teq}
-import org.scalatest.matchers.should
+import com.meineliebe.typelevel.{< as lt, _0, TestBase, *}
 import org.scalatest.wordspec.AnyWordSpec
 
 class MathTest extends TestBase {

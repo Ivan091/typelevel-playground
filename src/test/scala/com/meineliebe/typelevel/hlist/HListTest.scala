@@ -1,11 +1,8 @@
-package com.meineliebe.lox.typelevel.hlist
+package com.meineliebe.typelevel.hlist
 
-import com.meineliebe.lox.typelevel.{< as lt, <= as ltq, == as teq, *}
-import com.meineliebe.lox.typelevel.hlist.{=== as hleq, *}
-import com.meineliebe.lox.typelevel.hlist.BSort.given
-import org.scalatest.matchers.should
-import org.scalatest.wordspec.AnyWordSpec
-import org.tpolecat.typename.TypeName
+import com.meineliebe.typelevel.*
+import com.meineliebe.typelevel.hlist.=== as hleq
+import com.meineliebe.typelevel.hlist.BSort.given
 
 class HListTest extends TestBase {
 
@@ -32,7 +29,6 @@ class HListTest extends TestBase {
     Append.test[_1 :: HNil, _0, _1 :: _0 :: HNil]
     Append.test[_1 :: _2 :: _3 :: _4 :: HNil, _0, _1 :: _2 :: _3 :: _4 :: _0 :: HNil]
   }
-
 
   "sort" when {
     "bubble" in {

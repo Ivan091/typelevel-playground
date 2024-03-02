@@ -1,6 +1,6 @@
-package com.meineliebe.lox.typelevel.hlist
+package com.meineliebe.typelevel.hlist
 
-import com.meineliebe.lox.typelevel.*
+import com.meineliebe.typelevel.*
 
 trait QSort[HL <: HList] {
   type Result <: HList
@@ -37,9 +37,8 @@ object Partition {
   }
 
   given inductive2[P <: Nat, N <: Nat, T <: HList, L <: HList, R <: HList](using
-    N < P)(using part:
-  Partition[P :: T]
-  ): _Partition[P :: N :: T, P :: N :: L, R] = new Partition[P :: N :: T] {
+    N < P
+  )(using part: Partition[P :: T]): _Partition[P :: N :: T, P :: N :: L, R] = new Partition[P :: N :: T] {
     override type ResultLeft = P :: N :: L
     override type ResultRight = R
   }

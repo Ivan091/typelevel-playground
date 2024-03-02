@@ -1,10 +1,8 @@
-package com.meineliebe.lox.typelevel
+package com.meineliebe.typelevel
 
-import com.meineliebe.lox.typelevel.{< as lt, <= as ltq, == as teq}
-import com.meineliebe.lox.typelevel.Dec.given
-import org.scalatest.matchers.should
+import com.meineliebe.typelevel.{< as lt, <= as ltq, == as teq}
+import com.meineliebe.typelevel.Dec.given
 import org.scalatest.wordspec.AnyWordSpec
-import org.tpolecat.typename.TypeName
 
 import scala.runtime.stdLibPatches.Predef.summon
 
